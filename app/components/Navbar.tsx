@@ -1,23 +1,17 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
-import { useTransition } from "./TransitionContext";
 
 const NAV_LINKS = [
-  { label: "Visión", href: "/comingsoon" },
-  { label: "Servicios", href: "/comingsoon" },
-  { label: "Proyectos", href: "/comingsoon" },
-  { label: "Resultados", href: "/comingsoon" },
-  { label: "Contacto", href: "/comingsoon" },
+  { label: "Servicios", href: "#servicios" },
+  { label: "Proyectos", href: "#portfolio" },
+  { label: "Resultados", href: "#testimonios" },
+  { label: "Contacto", href: "#contacto" },
 ];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const { triggerTransition } = useTransition();
-  const pathname = usePathname();
-  const isHome = pathname === "/";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -28,20 +22,19 @@ export default function Navbar() {
   const handleNavClick = (e: React.MouseEvent, href: string) => {
     e.preventDefault();
     setOpen(false);
-    triggerTransition(e.clientX, e.clientY, href);
+    document.getElementById(href.slice(1))?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled ? "bg-white/95 backdrop-blur-sm shadow-sm" : "bg-transparent"
+        className={`fixed top-0 left-0 right-0 z-50 bg-white transition-shadow duration-300 ${
+          scrolled ? "shadow-sm" : ""
         }`}
       >
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           <a
             href="/"
-            onClick={(e) => handleNavClick(e, "/")}
             className="flex items-center gap-2 select-none"
           >
             <span
@@ -50,7 +43,7 @@ export default function Navbar() {
             >
               TTM
             </span>
-            <span className={`text-xl font-light tracking-widest uppercase transition-colors duration-300 ${!isHome || scrolled ? "text-[var(--brand-text-primary)]" : "text-white"}`}>
+            <span className="text-xl font-light tracking-widest uppercase text-[var(--brand-text-primary)]">
               Agencia
             </span>
           </a>
@@ -58,9 +51,9 @@ export default function Navbar() {
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-8">
             {NAV_LINKS.map((link) =>
-              link.href === "/contacto" ? (
+              link.label === "Contacto" ? (
                 <a
-                  key={link.href}
+                  key={link.label}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
                   className="text-sm font-bold uppercase tracking-widest px-4 py-2 rounded-md cursor-pointer transition-colors duration-200 text-white hover:opacity-90"
@@ -70,10 +63,10 @@ export default function Navbar() {
                 </a>
               ) : (
                 <a
-                  key={link.href}
+                  key={link.label}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className={`text-sm font-medium uppercase tracking-widest transition-colors duration-200 cursor-pointer relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-[var(--brand-primary)] after:transition-all after:duration-200 hover:after:w-full ${!isHome || scrolled ? "text-[var(--brand-text-primary)]" : "text-white"}`}
+                  className="text-sm font-medium uppercase tracking-widest text-[var(--brand-text-primary)] transition-colors duration-200 cursor-pointer relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-[var(--brand-primary)] after:transition-all after:duration-200 hover:after:w-full"
                 >
                   {link.label}
                 </a>
@@ -87,18 +80,20 @@ export default function Navbar() {
             aria-label="Toggle menu"
             className="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-[6px]"
           >
-            <span
-              className="block w-6 h-px bg-[var(--brand-text-primary)] transition-all duration-300 origin-center"
-              style={{ transform: open ? "translateY(7px) rotate(45deg)" : "none" }}
-            />
-            <span
-              className="block w-6 h-px bg-[var(--brand-text-primary)] transition-all duration-300"
-              style={{ opacity: open ? 0 : 1 }}
-            />
-            <span
-              className="block w-6 h-px bg-[var(--brand-text-primary)] transition-all duration-300 origin-center"
-              style={{ transform: open ? "translateY(-7px) rotate(-45deg)" : "none" }}
-            />
+            {[
+              { transform: open ? "translateY(7px) rotate(45deg)" : "none", opacity: 1 },
+              { transform: "none", opacity: open ? 0 : 1 },
+              { transform: open ? "translateY(-7px) rotate(-45deg)" : "none", opacity: 1 },
+            ].map((style, i) => (
+              <span
+                key={i}
+                className="block w-6 h-px transition-all duration-300 origin-center"
+                style={{
+                  ...style,
+                  background: "var(--brand-text-primary)",
+                }}
+              />
+            ))}
           </button>
         </div>
       </header>
@@ -113,7 +108,7 @@ export default function Navbar() {
       >
         {NAV_LINKS.map((link, i) => (
           <a
-            key={link.href}
+            key={link.label}
             href={link.href}
             onClick={(e) => handleNavClick(e, link.href)}
             className="text-2xl font-light uppercase tracking-[0.2em] text-[var(--brand-text-primary)] hover:text-[var(--brand-primary)] transition-colors duration-200 cursor-pointer"

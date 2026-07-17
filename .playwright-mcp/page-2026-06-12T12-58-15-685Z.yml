@@ -1,0 +1,199 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "TTM Agencia" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e5]: TTM
+        - generic [ref=e6]: Agencia
+      - button "Toggle menu" [ref=e7]
+  - generic:
+    - link "Visión":
+      - /url: /comingsoon
+    - link "Servicios":
+      - /url: /comingsoon
+    - link "Proyectos":
+      - /url: /comingsoon
+    - link "Resultados":
+      - /url: /comingsoon
+    - link "Contacto":
+      - /url: /comingsoon
+  - generic [ref=e11]:
+    - generic [ref=e15]:
+      - heading "TTMAgencia" [level=1] [ref=e16]
+      - paragraph [ref=e17]: Desarrollo web de alto impacto y automatizaciones inteligentes para escalar tu negocio.
+      - button "Conoce más" [ref=e18] [cursor=pointer]:
+        - generic [ref=e19]: Conoce más
+        - img [ref=e20]
+    - generic [ref=e24]: Scroll
+  - generic [ref=e27]:
+    - generic [ref=e28]:
+      - heading "Port folio" [level=2] [ref=e29]:
+        - text: Port
+        - text: folio
+      - paragraph [ref=e31]: Proyectos que combinan diseño de alto impacto con tecnología precisa. Cada trabajo es una solución real para un negocio real.
+      - generic [ref=e32]:
+        - button "Anterior" [ref=e33]:
+          - img [ref=e34]
+        - button "Siguiente" [ref=e36]:
+          - img [ref=e37]
+    - generic [ref=e40]:
+      - generic [ref=e41] [cursor=pointer]:
+        - generic [ref=e42]:
+          - img "E-commerce Platform" [ref=e43]
+          - generic [ref=e44]:
+            - generic [ref=e45]: Desarrollo Web
+            - generic [ref=e46]: E-commerce Platform
+        - generic [ref=e47]:
+          - paragraph [ref=e48]: Desarrollo Web
+          - paragraph [ref=e49]: E-commerce Platform
+      - generic [ref=e50] [cursor=pointer]:
+        - generic [ref=e51]:
+          - img "Brand Identity" [ref=e52]
+          - generic [ref=e53]:
+            - generic [ref=e54]: Diseño Digital
+            - generic [ref=e55]: Brand Identity
+        - generic [ref=e56]:
+          - paragraph [ref=e57]: Diseño Digital
+          - paragraph [ref=e58]: Brand Identity
+      - generic [ref=e59] [cursor=pointer]:
+        - generic [ref=e60]:
+          - img "SaaS Dashboard" [ref=e61]
+          - generic [ref=e62]:
+            - generic [ref=e63]: UI/UX Design
+            - generic [ref=e64]: SaaS Dashboard
+        - generic [ref=e65]:
+          - paragraph [ref=e66]: UI/UX Design
+          - paragraph [ref=e67]: SaaS Dashboard
+      - generic [ref=e68] [cursor=pointer]:
+        - generic [ref=e69]:
+          - img "Marketing Automation" [ref=e70]
+          - generic [ref=e71]:
+            - generic [ref=e72]: Automatización
+            - generic [ref=e73]: Marketing Automation
+        - generic [ref=e74]:
+          - paragraph [ref=e75]: Automatización
+          - paragraph [ref=e76]: Marketing Automation
+      - generic [ref=e77] [cursor=pointer]:
+        - generic [ref=e78]:
+          - img "Mobile App" [ref=e79]
+          - generic [ref=e80]:
+            - generic [ref=e81]: Desarrollo Móvil
+            - generic [ref=e82]: Mobile App
+        - generic [ref=e83]:
+          - paragraph [ref=e84]: Desarrollo Móvil
+          - paragraph [ref=e85]: Mobile App
+      - generic [ref=e86] [cursor=pointer]:
+        - generic [ref=e87]:
+          - img "Landing Page" [ref=e88]
+          - generic [ref=e89]:
+            - generic [ref=e90]: Conversión
+            - generic [ref=e91]: Landing Page
+        - generic [ref=e92]:
+          - paragraph [ref=e93]: Conversión
+          - paragraph [ref=e94]: Landing Page
+  - generic [ref=e96]:
+    - generic [ref=e97]:
+      - generic [ref=e98]:
+        - generic [ref=e99]: Lo que hacemos
+        - heading "Servicios" [level=2] [ref=e100]
+      - button "Consultar →" [ref=e101]
+    - generic [ref=e102]:
+      - generic [ref=e103] [cursor=pointer]:
+        - img "Desarrollo Web" [ref=e105]
+        - heading "Desarrollo Web" [level=3] [ref=e107]
+        - list [ref=e108]:
+          - listitem [ref=e109]: Landing Pages
+          - listitem [ref=e110]: Desarrollo Web Personalizado
+          - listitem [ref=e111]: Desarrollo de Sitios E-Commerce
+          - listitem [ref=e112]: Sitios Web Inmobiliarias
+      - generic [ref=e113] [cursor=pointer]:
+        - img "Automatizaciones" [ref=e115]
+        - heading "Automatizaciones" [level=3] [ref=e117]
+        - list [ref=e118]:
+          - listitem [ref=e119]: Soporte Automatizado
+          - listitem [ref=e120]: Cualificación Automatizada
+          - listitem [ref=e121]: Automatizaciones a medida
+          - listitem [ref=e122]: Chatbot integrado
+          - listitem [ref=e123]: Whatsapp Automatizado
+  - generic [ref=e125]:
+    - generic [ref=e126]:
+      - heading "Testimonios" [level=2] [ref=e127]
+      - paragraph [ref=e129]: Clientes reales. Resultados concretos. Sin palabrería.
+      - list [ref=e130]:
+        - listitem [ref=e131]:
+          - img [ref=e133]
+          - generic [ref=e135]: La satisfacción del cliente es nuestra prioridad.
+        - listitem [ref=e136]:
+          - img [ref=e138]
+          - generic [ref=e140]: Brindamos el mejor talento disponible.
+        - listitem [ref=e141]:
+          - img [ref=e143]
+          - generic [ref=e145]: Acompañamos y asesoramos en todo el proceso.
+    - generic [ref=e147]:
+      - generic [ref=e148]:
+        - paragraph [ref=e149]: “Excelente trabajo! Realizaron el trabajo antes de lo esperado y tuvieron un trato muy cordial.”
+        - generic [ref=e150]:
+          - generic [ref=e151]: VV
+          - generic [ref=e152]:
+            - generic [ref=e153]: Victor Vitreaux
+            - generic [ref=e154]: Fundador, DistroApp
+      - generic [ref=e155]:
+        - paragraph [ref=e156]: “Me salvaron cuando mi programador dejó de responderme, excelente servicio!”
+        - generic [ref=e157]:
+          - generic [ref=e158]: WV
+          - generic [ref=e159]:
+            - generic [ref=e160]: Wynsi Velazquez
+            - generic [ref=e161]: Intermediaria, Desarrollo Web
+      - generic [ref=e162]:
+        - paragraph [ref=e163]: “Buen servicio, me ayudaron a migrar mi aplicación y no hubieron problemas.”
+        - generic [ref=e164]:
+          - generic [ref=e165]: HG
+          - generic [ref=e166]:
+            - generic [ref=e167]: Hugo Guasch
+            - generic [ref=e168]: Fundador, RadioIbiza
+      - generic [ref=e169]:
+        - paragraph [ref=e170]: “Dos meses colaborando en webs sencillas, gran servicio y atención.”
+        - generic [ref=e171]:
+          - generic [ref=e172]: FB
+          - generic [ref=e173]:
+            - generic [ref=e174]: Felipe Blanco
+            - generic [ref=e175]: Intermediario, Desarrollo Web
+      - generic [ref=e176]:
+        - paragraph [ref=e177]: “Excelente trabajo! Realizaron el trabajo antes de lo esperado y tuvieron un trato muy cordial.”
+        - generic [ref=e178]:
+          - generic [ref=e179]: VV
+          - generic [ref=e180]:
+            - generic [ref=e181]: Victor Vitreaux
+            - generic [ref=e182]: Fundador, DistroApp
+      - generic [ref=e183]:
+        - paragraph [ref=e184]: “Me salvaron cuando mi programador dejó de responderme, excelente servicio!”
+        - generic [ref=e185]:
+          - generic [ref=e186]: WV
+          - generic [ref=e187]:
+            - generic [ref=e188]: Wynsi Velazquez
+            - generic [ref=e189]: Intermediaria, Desarrollo Web
+      - generic [ref=e190]:
+        - paragraph [ref=e191]: “Buen servicio, me ayudaron a migrar mi aplicación y no hubieron problemas.”
+        - generic [ref=e192]:
+          - generic [ref=e193]: HG
+          - generic [ref=e194]:
+            - generic [ref=e195]: Hugo Guasch
+            - generic [ref=e196]: Fundador, RadioIbiza
+      - generic [ref=e197]:
+        - paragraph [ref=e198]: “Dos meses colaborando en webs sencillas, gran servicio y atención.”
+        - generic [ref=e199]:
+          - generic [ref=e200]: FB
+          - generic [ref=e201]:
+            - generic [ref=e202]: Felipe Blanco
+            - generic [ref=e203]: Intermediario, Desarrollo Web
+  - generic [ref=e205]:
+    - generic [ref=e206]:
+      - heading "Contacto" [level=2] [ref=e207]
+      - paragraph [ref=e209]: Contanos tu proyecto y te respondemos en menos de 24 horas.
+    - generic [ref=e210]:
+      - button "Agendar" [ref=e211] [cursor=pointer]
+      - button "Contactar" [ref=e212] [cursor=pointer]
+  - contentinfo [ref=e214]:
+    - paragraph [ref=e215]: © 2026 TTM Agencia — Todos los derechos reservados
+  - button "Open Next.js Dev Tools" [ref=e221] [cursor=pointer]:
+    - img [ref=e222]

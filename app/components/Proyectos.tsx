@@ -29,6 +29,13 @@ const PROJECTS = [
     tags: ["Marketing", "Landing", "Minimalista"],
     image: "/portfolio/summermk/Captura de pantalla (134).png",
   },
+  {
+    title: "PlatoRest",
+    category: "Desarrollo Web",
+    description: "Sistema de fidelización, gestión de inventario y cobros para gastronomía.",
+    tags: ["Fidelización", "Inventario", "Cobros"],
+    image: "/portfolio/platorest/platorest.png",
+  },
 ];
 
 export default function Proyectos() {

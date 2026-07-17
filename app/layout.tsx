@@ -4,6 +4,9 @@ import "./globals.css";
 import { TransitionProvider } from "./components/TransitionContext";
 import PageTransition from "./components/PageTransition";
 import Navbar from "./components/Navbar";
+import { PostHogProvider } from "./components/PostHogProvider";
+import { PostHogPageView } from "./components/PostHogPageView";
+import { Suspense } from "react";
 
 const rinter = localFont({
   src: "../public/fonts/Rinter.woff2",
@@ -11,9 +14,67 @@ const rinter = localFont({
   display: "swap",
 });
 
+const siteUrl = "https://ttmagencia.com";
+
 export const metadata: Metadata = {
-  title: "TTM Agencia",
-  description: "TTM Agencia",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "TTM Agencia — Desarrollo Web y Automatizaciones en Buenos Aires",
+    template: "%s | TTM Agencia",
+  },
+  description:
+    "TTM Agencia desarrolla sitios web, landing pages, e-commerce y automatizaciones con IA (chatbots, WhatsApp automatizado) para negocios en Buenos Aires, Argentina.",
+  keywords: [
+    "desarrollo web Buenos Aires",
+    "agencia de desarrollo web",
+    "landing pages",
+    "automatizaciones con IA",
+    "chatbot WhatsApp automatizado",
+    "desarrollo de sitios e-commerce",
+  ],
+  alternates: { canonical: siteUrl },
+  openGraph: {
+    type: "website",
+    locale: "es_AR",
+    url: siteUrl,
+    siteName: "TTM Agencia",
+    title: "TTM Agencia — Desarrollo Web y Automatizaciones en Buenos Aires",
+    description:
+      "Desarrollo web, landing pages, e-commerce y automatizaciones con IA para negocios en Buenos Aires, Argentina.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "TTM Agencia — Desarrollo Web y Automatizaciones en Buenos Aires",
+    description:
+      "Desarrollo web, landing pages, e-commerce y automatizaciones con IA para negocios en Buenos Aires, Argentina.",
+  },
+  robots: { index: true, follow: true },
+};
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "TTM Agencia",
+  url: siteUrl,
+  logo: `${siteUrl}/favicon.ico`,
+  description:
+    "TTM Agencia desarrolla sitios web, landing pages, e-commerce y automatizaciones con IA para negocios en Buenos Aires, Argentina.",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Buenos Aires",
+    addressCountry: "AR",
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+54-911-7141-0652",
+    contactType: "customer service",
+    areaServed: "AR",
+    availableLanguage: "Spanish",
+  },
+  sameAs: [
+    "https://www.instagram.com/ttmagency.ok/",
+    "https://wa.me/5491171410652",
+  ],
 };
 
 export default function RootLayout({
@@ -24,11 +85,20 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${rinter.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
-        <TransitionProvider>
-          <Navbar />
-          <PageTransition />
-          {children}
-        </TransitionProvider>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+        <PostHogProvider>
+          <Suspense fallback={null}>
+            <PostHogPageView />
+          </Suspense>
+          <TransitionProvider>
+            <Navbar />
+            <PageTransition />
+            {children}
+          </TransitionProvider>
+        </PostHogProvider>
       </body>
     </html>
   );

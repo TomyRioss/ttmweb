@@ -5,39 +5,38 @@ import { useRef } from "react";
 const PORTFOLIO_ITEMS = [
   {
     id: 1,
-    title: "E-commerce Platform",
-    category: "Desarrollo Web",
-    img: "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800",
+    title: "Sleekstyles",
+    category: "E-Commerce",
+    desc: "E-commerce completo con integración a CRM y ERP",
+    img: "/portfolio/sleekstyles/sleekstyles.png",
   },
   {
     id: 2,
-    title: "Brand Identity",
-    category: "Diseño Digital",
-    img: "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800",
+    title: "Andrea Real State",
+    category: "Inmobiliaria",
+    desc: "Catálogo inmobiliario con sistema de administración simplificada y captación de prospectos",
+    img: "/portfolio/andraderealstate/Captura de pantalla (137).png",
   },
   {
     id: 3,
-    title: "SaaS Dashboard",
-    category: "UI/UX Design",
-    img: "https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=800",
+    title: "Krayson Studio",
+    category: "Estudio Técnico",
+    desc: "Página web completa para estudio técnico incluyendo pagos integrados",
+    img: "/portfolio/kraysonstudio/krayson.png",
   },
   {
     id: 4,
-    title: "Marketing Automation",
-    category: "Automatización",
-    img: "https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=800",
+    title: "SummerMK",
+    category: "Marketing",
+    desc: "Landing page para agencia de Marketing de alto nivel con diseño minimalista",
+    img: "/portfolio/summermk/Captura de pantalla (134).png",
   },
   {
     id: 5,
-    title: "Mobile App",
-    category: "Desarrollo Móvil",
-    img: "https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg?auto=compress&cs=tinysrgb&w=800",
-  },
-  {
-    id: 6,
-    title: "Landing Page",
-    category: "Conversión",
-    img: "https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=800",
+    title: "PlatoRest",
+    category: "Gastronomía",
+    desc: "Sistema de fidelización, gestión de inventario y cobros para gastronomía",
+    img: "/portfolio/platorest/platorest.png",
   },
 ];
 
@@ -141,12 +140,15 @@ export default function Portfolio() {
                       alt={item.title}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5">
                       <span className="text-white/70 text-xs uppercase tracking-widest font-semibold mb-1">
                         {item.category}
                       </span>
-                      <span className="text-white font-bold text-lg leading-tight">
+                      <span className="text-white font-bold text-lg leading-tight mb-1">
                         {item.title}
+                      </span>
+                      <span className="text-white/80 text-sm leading-snug">
+                        {item.desc}
                       </span>
                     </div>
                   </div>

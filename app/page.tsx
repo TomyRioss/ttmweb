@@ -27,85 +27,71 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="relative w-full min-h-screen overflow-hidden bg-[#0a0a0a] flex flex-col items-center justify-center">
-        {/* Video background */}
-        <video
-          className="absolute inset-0 w-full h-full object-cover"
-          src="/hero.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-        />
-
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black/60" />
-
-        {/* Dither overlay — grey, very transparent */}
-        <div className="absolute inset-0 z-10 opacity-[0.18] mix-blend-screen animate-[fadeIn_0.8s_ease-in_forwards]">
-          <Dither
-            waveColor={[1.0, 0.85, 0.7]}
-            disableAnimation={false}
-            enableMouseInteraction={true}
-            mouseRadius={0.3}
-            colorNum={3.6}
-            waveAmplitude={0.37}
-            waveFrequency={2.4}
-            waveSpeed={0.02}
-          />
-        </div>
-
-        {/* Radial glow */}
-        <div className="pointer-events-none absolute inset-0 z-10 bg-[radial-gradient(ellipse_60%_50%_at_50%_50%,rgba(255,107,0,0.08)_0%,transparent_100%)]" />
-
-        <div className="relative z-20 flex flex-col items-start gap-3 text-left px-6 w-fit">
+      <section className="relative w-full overflow-hidden bg-[var(--brand-accent)] flex flex-col md:flex-row items-stretch pt-16 min-h-[85vh]">
+        {/* Left: text */}
+        <div className="relative z-20 flex flex-col justify-center gap-5 px-6 md:pl-48 md:pr-16 py-16 md:py-0 md:w-[60%]">
           <h1
             ref={h1Ref}
-            className="select-none tracking-[0.25em] uppercase"
-            style={{ fontSize: "clamp(2rem, 6vw, 5rem)", color: "var(--brand-primary)" }}
+            className="font-black tracking-tight text-[var(--brand-primary)]"
+            style={{ fontSize: "clamp(2rem, 4vw, 3rem)", lineHeight: 1.15, maxWidth: "620px" }}
           >
-            TTM
-            <span className="ml-4 font-bold text-white">
-              Agencia
-            </span>
+            El desarrollo tecnologico de tú negocio comienza hoy.
           </h1>
 
           <p
-            className="text-white/60 text-lg font-light tracking-wide"
-            style={{ fontSize: "clamp(1rem, 2vw, 1.25rem)", maxWidth: subtitleWidth }}
+            className="text-[var(--brand-text-secondary)] font-light"
+            style={{ fontSize: "clamp(1rem, 1.5vw, 1.15rem)", maxWidth: subtitleWidth }}
           >
-            Desarrollo web de alto impacto y automatizaciones inteligentes para
-            escalar tu negocio.
+            Desde páginas para que des tus primeros pasos hasta automatizaciones para mejorar cualquier proceso, somos tus socios técnicos.
           </p>
 
-          <button
-            onClick={() => {
-              const el = document.querySelector("#vision");
-              if (el) el.scrollIntoView({ behavior: "smooth" });
-            }}
-            className="mt-4 flex flex-row items-center gap-2 cursor-pointer group"
-          >
-            <span className="italic text-[#FF6B00] text-xl tracking-wide group-hover:text-[#FF8C38] transition-colors">
-              Conoce más
-            </span>
-            <svg
-              className="w-5 h-5 text-[#FF6B00] group-hover:text-[#FF8C38] transition-colors animate-bounce"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth={2}
-              viewBox="0 0 24 24"
+          <div className="flex flex-row items-center gap-4 mt-2">
+            <a
+              href="#contacto"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById("contacto")?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="px-6 py-3 rounded-md text-white font-bold text-sm uppercase tracking-wide transition-opacity hover:opacity-90"
+              style={{ background: "var(--brand-primary)" }}
             >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M12 5v14M6 13l6 6 6-6" />
-            </svg>
-          </button>
-
+              Agendar demo
+            </a>
+            <a
+              href="#servicios"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById("servicios")?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="px-6 py-3 rounded-md font-bold text-sm uppercase tracking-wide border transition-colors hover:bg-[var(--brand-accent)]"
+              style={{ borderColor: "var(--brand-primary)", color: "var(--brand-primary)" }}
+            >
+              Conoce más
+            </a>
+          </div>
         </div>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
-          <div className="w-px h-10 bg-[#1A1A1A] animate-pulse" />
-          <span className="text-[#1A1A1A] text-xs uppercase tracking-[0.3em]">Scroll</span>
+        {/* Right: video */}
+        <div className="relative md:w-[40%] min-h-[45vh] md:min-h-0">
+          <video
+            className="absolute inset-0 w-full h-full object-cover"
+            src="/hero.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+          />
         </div>
+
+        {/* Bottom curve */}
+        <svg
+          className="absolute bottom-0 left-0 w-full z-20 text-[var(--brand-surface)]"
+          viewBox="0 0 1440 80"
+          preserveAspectRatio="none"
+          style={{ height: "60px" }}
+        >
+          <path fill="currentColor" d="M0,80 C480,0 960,0 1440,80 L1440,80 L0,80 Z" />
+        </svg>
       </section>
 
       <VisionMision />
@@ -113,7 +99,27 @@ export default function Home() {
       <Resultados />
       <Contacto />
 
-      <footer className="bg-[var(--brand-text-primary)] py-10 px-6 text-center">
+      <footer className="bg-[var(--brand-text-primary)] py-12 px-6 text-center flex flex-col items-center gap-6">
+        <nav className="flex items-center gap-6">
+          {[
+            { label: "Facebook", href: "https://www.facebook.com/" },
+            { label: "Instagram", href: "https://www.instagram.com/ttmagency.ok/" },
+            { label: "WhatsApp", href: "https://wa.me/5491171410652" },
+          ].map((social) => (
+            <a
+              key={social.label}
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/50 text-xs font-semibold uppercase tracking-[0.2em] transition-colors duration-200 hover:text-[var(--brand-primary)]"
+            >
+              {social.label}
+            </a>
+          ))}
+        </nav>
+
+        <div className="w-10 h-px bg-white/15" />
+
         <p className="text-white/40 text-sm uppercase tracking-widest">
           © {new Date().getFullYear()} TTM Agencia — Todos los derechos reservados
         </p>

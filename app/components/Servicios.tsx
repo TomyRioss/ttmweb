@@ -84,7 +84,7 @@ export default function Servicios() {
                 {items.map((item) => (
                   <li
                     key={item}
-                    className="text-sm font-medium text-[var(--brand-text-secondary)] hover:text-[var(--brand-primary)] transition-colors duration-150 cursor-pointer"
+                    className="text-base font-medium text-[var(--brand-text-secondary)] hover:text-[var(--brand-primary)] transition-colors duration-150 cursor-pointer"
                   >
                     {item}
                   </li>
