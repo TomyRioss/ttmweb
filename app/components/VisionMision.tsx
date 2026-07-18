@@ -121,8 +121,8 @@ export default function Portfolio() {
           <div className="flex-1 min-w-0">
             <div
               ref={trackRef}
-              className="flex gap-5 overflow-x-auto pb-4 scroll-smooth select-none"
-              style={{ scrollbarWidth: "none", msOverflowStyle: "none", cursor: "grab" }}
+              className="flex gap-5 overflow-x-auto pb-4 scroll-smooth select-none snap-x snap-mandatory touch-pan-x"
+              style={{ scrollbarWidth: "none", msOverflowStyle: "none", cursor: "grab", WebkitOverflowScrolling: "touch" }}
               onMouseDown={onMouseDown}
               onMouseMove={onMouseMove}
               onMouseUp={onMouseUp}
@@ -131,7 +131,7 @@ export default function Portfolio() {
               {PORTFOLIO_ITEMS.map((item) => (
                 <div
                   key={item.id}
-                  className="flex-shrink-0 w-[480px] group cursor-pointer"
+                  className="flex-shrink-0 w-[85vw] max-w-[420px] sm:w-[420px] snap-center group cursor-pointer"
                 >
                   <div className="relative overflow-hidden rounded-2xl aspect-[4/3] bg-gray-100">
                     {/* eslint-disable-next-line @next/next/no-img-element */}

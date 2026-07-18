@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar";
 import { PostHogProvider } from "./components/PostHogProvider";
 import { PostHogPageView } from "./components/PostHogPageView";
 import { Suspense } from "react";
+import { Analytics } from "@vercel/analytics/next";
 
 const rinter = localFont({
   src: "../public/fonts/Rinter.woff2",
@@ -77,6 +78,40 @@ const organizationJsonLd = {
   ],
 };
 
+const servicesJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  provider: { "@type": "Organization", name: "TTM Agencia", url: siteUrl },
+  areaServed: { "@type": "Country", name: "Argentina" },
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Servicios TTM Agencia",
+    itemListElement: [
+      {
+        "@type": "OfferCatalog",
+        name: "Desarrollo Web",
+        itemListElement: [
+          "Landing Pages",
+          "Desarrollo Web Personalizado",
+          "Desarrollo de Sitios E-Commerce",
+          "Sitios Web Inmobiliarias",
+        ].map((name) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name } })),
+      },
+      {
+        "@type": "OfferCatalog",
+        name: "Automatizaciones",
+        itemListElement: [
+          "Soporte Automatizado",
+          "Cualificación Automatizada",
+          "Automatizaciones a medida",
+          "Chatbot integrado",
+          "WhatsApp Automatizado",
+        ].map((name) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name } })),
+      },
+    ],
+  },
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -89,6 +124,10 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesJsonLd) }}
+        />
         <PostHogProvider>
           <Suspense fallback={null}>
             <PostHogPageView />
@@ -99,6 +138,7 @@ export default function RootLayout({
             {children}
           </TransitionProvider>
         </PostHogProvider>
+        <Analytics />
       </body>
     </html>
   );
