@@ -24,10 +24,17 @@ export const metadata: Metadata = {
     template: "%s | TTM Agencia",
   },
   description:
-    "TTM Agencia desarrolla sitios web, landing pages, e-commerce y automatizaciones con IA (chatbots, WhatsApp automatizado) para negocios en Buenos Aires, Argentina.",
+    "TTM Agencia: programación y diseño web, sitios web, e-commerce y automatizaciones con IA (chatbots, WhatsApp automatizado) para negocios en Buenos Aires, Argentina.",
   keywords: [
     "desarrollo web Buenos Aires",
     "agencia de desarrollo web",
+    "agencia diseño web",
+    "programador",
+    "programador web",
+    "diseñador web",
+    "programación web",
+    "programación sitio web",
+    "sitio web",
     "landing pages",
     "automatizaciones con IA",
     "chatbot WhatsApp automatizado",
@@ -81,6 +88,7 @@ const organizationJsonLd = {
 const servicesJsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
+  serviceType: ["Programación web", "Diseño web", "Desarrollo web", "Automatizaciones con IA"],
   provider: { "@type": "Organization", name: "TTM Agencia", url: siteUrl },
   areaServed: { "@type": "Country", name: "Argentina" },
   hasOfferCatalog: {

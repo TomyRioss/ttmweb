@@ -46,6 +46,9 @@ export default function Servicios() {
             <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-[var(--brand-text-primary)]">
               Servicios
             </h2>
+            <p className="sr-only">
+              Agencia de programación y diseño web: programador web, diseñador web y desarrollo de sitios web a medida.
+            </p>
           </div>
           <button
             onClick={scrollToContact}
