@@ -1,17 +1,20 @@
 "use client";
 
 import { useState, useEffect } from "react";
-
-const NAV_LINKS = [
-  { label: "Servicios", href: "#servicios" },
-  { label: "Proyectos", href: "#portfolio" },
-  { label: "Resultados", href: "#testimonios" },
-  { label: "Contacto", href: "#contacto" },
-];
+import { useTranslations } from "next-intl";
+import LocaleSwitcher from "./LocaleSwitcher";
 
 export default function Navbar() {
+  const t = useTranslations("nav");
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  const NAV_LINKS = [
+    { label: t("servicios"), href: "#servicios" },
+    { label: t("proyectos"), href: "#portfolio" },
+    { label: t("resultados"), href: "#testimonios" },
+    { label: t("contacto"), href: "#contacto" },
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -51,9 +54,9 @@ export default function Navbar() {
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-8">
             {NAV_LINKS.map((link) =>
-              link.label === "Contacto" ? (
+              link.label === t("contacto") ? (
                 <a
-                  key={link.label}
+                  key={link.href}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
                   className="text-sm font-bold uppercase tracking-widest px-4 py-2 rounded-md cursor-pointer transition-colors duration-200 text-white hover:opacity-90"
@@ -63,7 +66,7 @@ export default function Navbar() {
                 </a>
               ) : (
                 <a
-                  key={link.label}
+                  key={link.href}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
                   className="text-sm font-medium uppercase tracking-widest text-[var(--brand-text-primary)] transition-colors duration-200 cursor-pointer relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-[var(--brand-primary)] after:transition-all after:duration-200 hover:after:w-full"
@@ -72,6 +75,7 @@ export default function Navbar() {
                 </a>
               )
             )}
+            <LocaleSwitcher />
           </nav>
 
           {/* Mobile hamburger */}
@@ -108,7 +112,7 @@ export default function Navbar() {
       >
         {NAV_LINKS.map((link, i) => (
           <a
-            key={link.label}
+            key={link.href}
             href={link.href}
             onClick={(e) => handleNavClick(e, link.href)}
             className="text-2xl font-light uppercase tracking-[0.2em] text-[var(--brand-text-primary)] hover:text-[var(--brand-primary)] transition-colors duration-200 cursor-pointer"
@@ -121,6 +125,7 @@ export default function Navbar() {
             {link.label}
           </a>
         ))}
+        <LocaleSwitcher mobile />
       </div>
     </>
   );

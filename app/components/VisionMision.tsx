@@ -1,46 +1,19 @@
 "use client";
 
 import { useRef } from "react";
+import { useTranslations } from "next-intl";
 
-const PORTFOLIO_ITEMS = [
-  {
-    id: 1,
-    title: "Sleekstyles",
-    category: "E-Commerce",
-    desc: "E-commerce completo con integración a CRM y ERP",
-    img: "/portfolio/sleekstyles/sleekstyles.png",
-  },
-  {
-    id: 2,
-    title: "Andrea Real State",
-    category: "Inmobiliaria",
-    desc: "Catálogo inmobiliario con sistema de administración simplificada y captación de prospectos",
-    img: "/portfolio/andraderealstate/Captura de pantalla (137).png",
-  },
-  {
-    id: 3,
-    title: "Krayson Studio",
-    category: "Estudio Técnico",
-    desc: "Página web completa para estudio técnico incluyendo pagos integrados",
-    img: "/portfolio/kraysonstudio/krayson.png",
-  },
-  {
-    id: 4,
-    title: "SummerMK",
-    category: "Marketing",
-    desc: "Landing page para agencia de Marketing de alto nivel con diseño minimalista",
-    img: "/portfolio/summermk/Captura de pantalla (134).png",
-  },
-  {
-    id: 5,
-    title: "PlatoRest",
-    category: "Gastronomía",
-    desc: "Sistema de fidelización, gestión de inventario y cobros para gastronomía",
-    img: "/portfolio/platorest/platorest.png",
-  },
+const PORTFOLIO_IMAGES = [
+  "/portfolio/sleekstyles/sleekstyles.png",
+  "/portfolio/andraderealstate/Captura de pantalla (137).png",
+  "/portfolio/kraysonstudio/krayson.png",
+  "/portfolio/summermk/Captura de pantalla (134).png",
+  "/portfolio/platorest/platorest.png",
 ];
 
 export default function Portfolio() {
+  const t = useTranslations("portfolio");
+  const items = t.raw("items") as { title: string; category: string; desc: string }[];
   const trackRef = useRef<HTMLDivElement>(null);
   const isDragging = useRef(false);
   const startX = useRef(0);
@@ -83,22 +56,22 @@ export default function Portfolio() {
 
           {/* Left — text */}
           <div className="md:w-56 flex-shrink-0">
-            <h2 className="text-5xl md:text-6xl font-black uppercase tracking-tight text-[var(--brand-text-primary)] leading-none mb-4">
-              Port<br />folio
+            <h2 className="text-5xl md:text-6xl font-black uppercase tracking-tight text-[var(--brand-text-primary)] leading-none mb-4 break-words">
+              {t("heading")}
             </h2>
             <div
               className="h-1 w-12 rounded-full mb-6"
               style={{ background: "var(--brand-primary)" }}
             />
             <p className="text-[var(--brand-text-secondary)] leading-relaxed text-base">
-              Proyectos que combinan diseño de alto impacto con tecnología precisa. Cada trabajo es una solución real para un negocio real.
+              {t("desc")}
             </p>
 
             {/* Arrows */}
             <div className="flex gap-3 mt-10">
               <button
                 onClick={() => scroll("left")}
-                aria-label="Anterior"
+                aria-label={t("prev")}
                 className="w-11 h-11 rounded-full border border-[var(--brand-accent)] bg-white flex items-center justify-center text-[var(--brand-text-primary)] hover:bg-[var(--brand-primary)] hover:text-white hover:border-[var(--brand-primary)] transition-all duration-200"
               >
                 <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -107,7 +80,7 @@ export default function Portfolio() {
               </button>
               <button
                 onClick={() => scroll("right")}
-                aria-label="Siguiente"
+                aria-label={t("next")}
                 className="w-11 h-11 rounded-full border border-[var(--brand-accent)] bg-white flex items-center justify-center text-[var(--brand-text-primary)] hover:bg-[var(--brand-primary)] hover:text-white hover:border-[var(--brand-primary)] transition-all duration-200"
               >
                 <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -128,15 +101,15 @@ export default function Portfolio() {
               onMouseUp={onMouseUp}
               onMouseLeave={onMouseUp}
             >
-              {PORTFOLIO_ITEMS.map((item) => (
+              {items.map((item, idx) => (
                 <div
-                  key={item.id}
+                  key={item.title}
                   className="flex-shrink-0 w-[85vw] max-w-[420px] sm:w-[420px] snap-center group cursor-pointer"
                 >
                   <div className="relative overflow-hidden rounded-2xl aspect-[4/3] bg-gray-100">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
-                      src={item.img}
+                      src={PORTFOLIO_IMAGES[idx]}
                       alt={item.title}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />

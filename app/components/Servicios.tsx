@@ -1,30 +1,16 @@
 "use client";
 
-const SERVICES = [
-  {
-    title: "Desarrollo Web",
-    img: "https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=900",
-    items: [
-      "Landing Pages",
-      "Desarrollo Web Personalizado",
-      "Desarrollo de Sitios E-Commerce",
-      "Sitios Web Inmobiliarias",
-    ],
-  },
-  {
-    title: "Automatizaciones",
-    img: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=900",
-    items: [
-      "Soporte Automatizado",
-      "Cualificación Automatizada",
-      "Automatizaciones a medida",
-      "Chatbot integrado",
-      "Whatsapp Automatizado",
-    ],
-  },
+import { useTranslations } from "next-intl";
+
+const SERVICE_IMAGES = [
+  "https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=900",
+  "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=900",
 ];
 
 export default function Servicios() {
+  const t = useTranslations("services");
+  const groups = t.raw("groups") as { title: string; items: string[] }[];
+
   const scrollToContact = () => {
     const el = document.querySelector("#contacto");
     if (el) el.scrollIntoView({ behavior: "smooth" });
@@ -41,33 +27,33 @@ export default function Servicios() {
               className="inline-block text-xs font-bold uppercase tracking-[0.3em] mb-3"
               style={{ color: "var(--brand-primary)" }}
             >
-              Lo que hacemos
+              {t("eyebrow")}
             </span>
             <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-[var(--brand-text-primary)]">
-              Servicios
+              {t("heading")}
             </h2>
             <p className="sr-only">
-              Agencia de programación y diseño web: programador web, diseñador web y desarrollo de sitios web a medida.
+              {t("srDescription")}
             </p>
           </div>
           <button
             onClick={scrollToContact}
             className="text-sm font-semibold text-[var(--brand-text-secondary)] hover:text-[var(--brand-primary)] transition-colors duration-200 flex items-center gap-1 whitespace-nowrap"
           >
-            Consultar →
+            {t("cta")}
           </button>
         </div>
 
         {/* Grid */}
         <div className="grid md:grid-cols-2 gap-10">
-          {SERVICES.map(({ title, img, items }) => (
+          {groups.map(({ title, items }, idx) => (
             <div key={title} className="group cursor-pointer" onClick={scrollToContact}>
 
               {/* Image */}
               <div className="relative overflow-hidden rounded-2xl aspect-[16/5] mb-5">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={img}
+                  src={SERVICE_IMAGES[idx]}
                   alt={title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />

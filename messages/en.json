@@ -1,0 +1,172 @@
+{
+  "metadata": {
+    "titleDefault": "TTM Agencia — Web Development and Automation in Buenos Aires",
+    "titleTemplate": "%s | TTM Agencia",
+    "description": "TTM Agencia: web programming and design, websites, e-commerce and AI automation (chatbots, automated WhatsApp) for businesses in Buenos Aires, Argentina.",
+    "keywords": [
+      "web development Buenos Aires",
+      "web development agency",
+      "web design agency",
+      "web developer",
+      "web programmer",
+      "web designer",
+      "web programming",
+      "website programming",
+      "website",
+      "landing pages",
+      "AI automation",
+      "automated WhatsApp chatbot",
+      "e-commerce website development"
+    ],
+    "ogTitle": "TTM Agencia — Web Development and Automation in Buenos Aires",
+    "ogDescription": "Web development, landing pages, e-commerce and AI automation for businesses in Buenos Aires, Argentina."
+  },
+  "jsonLd": {
+    "orgDescription": "TTM Agencia builds websites, landing pages, e-commerce and AI automation for businesses in Buenos Aires, Argentina.",
+    "serviceTypes": ["Web Programming", "Web Design", "Web Development", "AI Automation"],
+    "catalogName": "TTM Agencia Services",
+    "webDevCatalog": "Web Development",
+    "webDevItems": [
+      "Landing Pages",
+      "Custom Web Development",
+      "E-Commerce Site Development",
+      "Real Estate Websites"
+    ],
+    "automationCatalog": "Automation",
+    "automationItems": [
+      "Automated Support",
+      "Automated Lead Qualification",
+      "Custom Automation",
+      "Integrated Chatbot",
+      "Automated WhatsApp"
+    ]
+  },
+  "nav": {
+    "servicios": "Services",
+    "proyectos": "Projects",
+    "resultados": "Results",
+    "contacto": "Contact"
+  },
+  "hero": {
+    "title": "The technological development of your business starts today.",
+    "subtitle": "From pages for your first steps to automations that improve any process, we're your technical partners.",
+    "ctaPrimary": "Book a demo",
+    "ctaSecondary": "Learn more"
+  },
+  "footer": {
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "whatsapp": "WhatsApp",
+    "rights": "All rights reserved"
+  },
+  "portfolio": {
+    "heading": "Portfolio",
+    "desc": "Projects that combine high-impact design with precise technology. Every project is a real solution for a real business.",
+    "prev": "Previous",
+    "next": "Next",
+    "items": [
+      {
+        "title": "Sleekstyles",
+        "category": "E-Commerce",
+        "desc": "Full e-commerce site with CRM and ERP integration"
+      },
+      {
+        "title": "Andrea Real State",
+        "category": "Real Estate",
+        "desc": "Real estate catalog with simplified management system and lead capture"
+      },
+      {
+        "title": "Krayson Studio",
+        "category": "Technical Studio",
+        "desc": "Full website for a technical studio including integrated payments"
+      },
+      {
+        "title": "SummerMK",
+        "category": "Marketing",
+        "desc": "Landing page for a high-end marketing agency with minimalist design"
+      },
+      {
+        "title": "PlatoRest",
+        "category": "Food Service",
+        "desc": "Loyalty, inventory management and payment system for restaurants"
+      }
+    ]
+  },
+  "services": {
+    "eyebrow": "What we do",
+    "heading": "Services",
+    "srDescription": "Web programming and design agency: web developer, web designer and custom website development.",
+    "cta": "Get in touch →",
+    "groups": [
+      {
+        "title": "Web Development",
+        "items": [
+          "Landing Pages",
+          "Custom Web Development",
+          "E-Commerce Site Development",
+          "Real Estate Websites"
+        ]
+      },
+      {
+        "title": "Automation",
+        "items": [
+          "Automated Support",
+          "Automated Lead Qualification",
+          "Custom Automation",
+          "Integrated Chatbot",
+          "Automated WhatsApp"
+        ]
+      }
+    ]
+  },
+  "results": {
+    "heading": "Testimonials",
+    "tagline": "Real clients. Real results. No fluff.",
+    "bullets": [
+      "Customer satisfaction is our priority.",
+      "We bring the best talent available.",
+      "We guide and advise you through the whole process."
+    ],
+    "testimonials": [
+      {
+        "quote": "Excellent work! They delivered ahead of schedule and were very friendly.",
+        "author": "Victor Vitreaux",
+        "role": "Founder, DistroApp"
+      },
+      {
+        "quote": "They saved me when my developer stopped responding — excellent service!",
+        "author": "Wynsi Velazquez",
+        "role": "Intermediary, Web Development"
+      },
+      {
+        "quote": "Great service, they helped me migrate my app without any issues.",
+        "author": "Hugo Guasch",
+        "role": "Founder, RadioIbiza"
+      },
+      {
+        "quote": "Two months collaborating on simple websites, great service and attention.",
+        "author": "Felipe Blanco",
+        "role": "Intermediary, Web Development"
+      }
+    ]
+  },
+  "contact": {
+    "heading": "Contact",
+    "subtitle": "Tell us about your project and we'll reply within 24 hours.",
+    "tabAgendar": "Schedule",
+    "tabContactar": "Contact",
+    "scheduleHint": "Click on a date and pick a time.",
+    "whatsappCta": "Talk on WhatsApp"
+  },
+  "chat": {
+    "greeting": "Hi! How can I help you?",
+    "botName": "TTM Agencia Bot",
+    "closeChat": "Close chat",
+    "openChat": "Open chat",
+    "typing": "Typing...",
+    "sendError": "Error sending message. Please try again.",
+    "placeholder": "Type your message...",
+    "sendMessage": "Send message",
+    "whatsappBubble": "Get advice in minutes!"
+  }
+}

@@ -1,0 +1,172 @@
+{
+  "metadata": {
+    "titleDefault": "TTM Agencia — Desarrollo Web y Automatizaciones en Buenos Aires",
+    "titleTemplate": "%s | TTM Agencia",
+    "description": "TTM Agencia: programación y diseño web, sitios web, e-commerce y automatizaciones con IA (chatbots, WhatsApp automatizado) para negocios en Buenos Aires, Argentina.",
+    "keywords": [
+      "desarrollo web Buenos Aires",
+      "agencia de desarrollo web",
+      "agencia diseño web",
+      "programador",
+      "programador web",
+      "diseñador web",
+      "programación web",
+      "programación sitio web",
+      "sitio web",
+      "landing pages",
+      "automatizaciones con IA",
+      "chatbot WhatsApp automatizado",
+      "desarrollo de sitios e-commerce"
+    ],
+    "ogTitle": "TTM Agencia — Desarrollo Web y Automatizaciones en Buenos Aires",
+    "ogDescription": "Desarrollo web, landing pages, e-commerce y automatizaciones con IA para negocios en Buenos Aires, Argentina."
+  },
+  "jsonLd": {
+    "orgDescription": "TTM Agencia desarrolla sitios web, landing pages, e-commerce y automatizaciones con IA para negocios en Buenos Aires, Argentina.",
+    "serviceTypes": ["Programación web", "Diseño web", "Desarrollo web", "Automatizaciones con IA"],
+    "catalogName": "Servicios TTM Agencia",
+    "webDevCatalog": "Desarrollo Web",
+    "webDevItems": [
+      "Landing Pages",
+      "Desarrollo Web Personalizado",
+      "Desarrollo de Sitios E-Commerce",
+      "Sitios Web Inmobiliarias"
+    ],
+    "automationCatalog": "Automatizaciones",
+    "automationItems": [
+      "Soporte Automatizado",
+      "Cualificación Automatizada",
+      "Automatizaciones a medida",
+      "Chatbot integrado",
+      "WhatsApp Automatizado"
+    ]
+  },
+  "nav": {
+    "servicios": "Servicios",
+    "proyectos": "Proyectos",
+    "resultados": "Resultados",
+    "contacto": "Contacto"
+  },
+  "hero": {
+    "title": "El desarrollo tecnologico de tú negocio comienza hoy.",
+    "subtitle": "Desde páginas para que des tus primeros pasos hasta automatizaciones para mejorar cualquier proceso, somos tus socios técnicos.",
+    "ctaPrimary": "Agendar demo",
+    "ctaSecondary": "Conoce más"
+  },
+  "footer": {
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "whatsapp": "WhatsApp",
+    "rights": "Todos los derechos reservados"
+  },
+  "portfolio": {
+    "heading": "Portfolio",
+    "desc": "Proyectos que combinan diseño de alto impacto con tecnología precisa. Cada trabajo es una solución real para un negocio real.",
+    "prev": "Anterior",
+    "next": "Siguiente",
+    "items": [
+      {
+        "title": "Sleekstyles",
+        "category": "E-Commerce",
+        "desc": "E-commerce completo con integración a CRM y ERP"
+      },
+      {
+        "title": "Andrea Real State",
+        "category": "Inmobiliaria",
+        "desc": "Catálogo inmobiliario con sistema de administración simplificada y captación de prospectos"
+      },
+      {
+        "title": "Krayson Studio",
+        "category": "Estudio Técnico",
+        "desc": "Página web completa para estudio técnico incluyendo pagos integrados"
+      },
+      {
+        "title": "SummerMK",
+        "category": "Marketing",
+        "desc": "Landing page para agencia de Marketing de alto nivel con diseño minimalista"
+      },
+      {
+        "title": "PlatoRest",
+        "category": "Gastronomía",
+        "desc": "Sistema de fidelización, gestión de inventario y cobros para gastronomía"
+      }
+    ]
+  },
+  "services": {
+    "eyebrow": "Lo que hacemos",
+    "heading": "Servicios",
+    "srDescription": "Agencia de programación y diseño web: programador web, diseñador web y desarrollo de sitios web a medida.",
+    "cta": "Consultar →",
+    "groups": [
+      {
+        "title": "Desarrollo Web",
+        "items": [
+          "Landing Pages",
+          "Desarrollo Web Personalizado",
+          "Desarrollo de Sitios E-Commerce",
+          "Sitios Web Inmobiliarias"
+        ]
+      },
+      {
+        "title": "Automatizaciones",
+        "items": [
+          "Soporte Automatizado",
+          "Cualificación Automatizada",
+          "Automatizaciones a medida",
+          "Chatbot integrado",
+          "Whatsapp Automatizado"
+        ]
+      }
+    ]
+  },
+  "results": {
+    "heading": "Testimonios",
+    "tagline": "Clientes reales. Resultados concretos. Sin palabrería.",
+    "bullets": [
+      "La satisfacción del cliente es nuestra prioridad.",
+      "Brindamos el mejor talento disponible.",
+      "Acompañamos y asesoramos en todo el proceso."
+    ],
+    "testimonials": [
+      {
+        "quote": "Excelente trabajo! Realizaron el trabajo antes de lo esperado y tuvieron un trato muy cordial.",
+        "author": "Victor Vitreaux",
+        "role": "Fundador, DistroApp"
+      },
+      {
+        "quote": "Me salvaron cuando mi programador dejó de responderme, excelente servicio!",
+        "author": "Wynsi Velazquez",
+        "role": "Intermediaria, Desarrollo Web"
+      },
+      {
+        "quote": "Buen servicio, me ayudaron a migrar mi aplicación y no hubieron problemas.",
+        "author": "Hugo Guasch",
+        "role": "Fundador, RadioIbiza"
+      },
+      {
+        "quote": "Dos meses colaborando en webs sencillas, gran servicio y atención.",
+        "author": "Felipe Blanco",
+        "role": "Intermediario, Desarrollo Web"
+      }
+    ]
+  },
+  "contact": {
+    "heading": "Contacto",
+    "subtitle": "Contanos tu proyecto y te respondemos en menos de 24 horas.",
+    "tabAgendar": "Agendar",
+    "tabContactar": "Contactar",
+    "scheduleHint": "Hacé click en una fecha y elegí una hora.",
+    "whatsappCta": "Hablar por WhatsApp"
+  },
+  "chat": {
+    "greeting": "¡Hola! ¿En qué te puedo ayudar?",
+    "botName": "TTM Agencia Bot",
+    "closeChat": "Cerrar chat",
+    "openChat": "Abrir chat",
+    "typing": "Escribiendo...",
+    "sendError": "Error al enviar el mensaje. Probá de nuevo.",
+    "placeholder": "Escribí tu mensaje...",
+    "sendMessage": "Enviar mensaje",
+    "whatsappBubble": "¡Asesorate en minutos!"
+  }
+}

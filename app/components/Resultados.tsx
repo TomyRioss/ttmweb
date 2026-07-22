@@ -1,35 +1,22 @@
 "use client";
 
-const TESTIMONIALS = [
-  {
-    quote: "Excelente trabajo! Realizaron el trabajo antes de lo esperado y tuvieron un trato muy cordial.",
-    author: "Victor Vitreaux",
-    role: "Fundador, DistroApp",
-    initials: "VV",
-  },
-  {
-    quote: "Me salvaron cuando mi programador dejó de responderme, excelente servicio!",
-    author: "Wynsi Velazquez",
-    role: "Intermediaria, Desarrollo Web",
-    initials: "WV",
-  },
-  {
-    quote: "Buen servicio, me ayudaron a migrar mi aplicación y no hubieron problemas.",
-    author: "Hugo Guasch",
-    role: "Fundador, RadioIbiza",
-    initials: "HG",
-  },
-  {
-    quote: "Dos meses colaborando en webs sencillas, gran servicio y atención.",
-    author: "Felipe Blanco",
-    role: "Intermediario, Desarrollo Web",
-    initials: "FB",
-  },
-];
+import { useTranslations } from "next-intl";
 
-const doubled = [...TESTIMONIALS, ...TESTIMONIALS];
+function initialsOf(name: string) {
+  return name
+    .split(" ")
+    .map((part) => part[0])
+    .slice(0, 2)
+    .join("")
+    .toUpperCase();
+}
 
 export default function Resultados() {
+  const t = useTranslations("results");
+  const testimonials = t.raw("testimonials") as { quote: string; author: string; role: string }[];
+  const bullets = t.raw("bullets") as string[];
+  const doubled = [...testimonials, ...testimonials];
+
   return (
     <section
       id="testimonios"
@@ -39,22 +26,18 @@ export default function Resultados() {
         {/* Left */}
         <div>
           <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-white mb-4">
-            Testimonios
+            {t("heading")}
           </h2>
           <div
             className="h-1 w-16 rounded-full mb-8"
             style={{ background: "var(--brand-primary)" }}
           />
           <p className="text-white/60 text-base leading-relaxed mb-8 max-w-sm">
-            Clientes reales. Resultados concretos. Sin palabrería.
+            {t("tagline")}
           </p>
 
           <ul className="flex flex-col gap-3">
-            {[
-              "La satisfacción del cliente es nuestra prioridad.",
-              "Brindamos el mejor talento disponible.",
-              "Acompañamos y asesoramos en todo el proceso.",
-            ].map((item) => (
+            {bullets.map((item) => (
               <li key={item} className="flex items-start gap-3">
                 <span
                   className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center"
@@ -78,7 +61,7 @@ export default function Resultados() {
           <div className="absolute bottom-0 left-0 right-0 h-16 z-10 pointer-events-none bg-gradient-to-t from-[#1a1a1a] to-transparent" />
 
           <div className="animate-scroll-y hover:[animation-play-state:paused] flex flex-col gap-4">
-            {doubled.map(({ quote, author, role, initials }, i) => (
+            {doubled.map(({ quote, author, role }, i) => (
               <div
                 key={i}
                 className="bg-white/5 border border-white/10 rounded-2xl p-6 flex-shrink-0"
@@ -91,7 +74,7 @@ export default function Resultados() {
                     className="w-9 h-9 rounded-lg flex items-center justify-center text-xs font-black text-white flex-shrink-0"
                     style={{ background: "var(--brand-primary)" }}
                   >
-                    {initials}
+                    {initialsOf(author)}
                   </div>
                   <div>
                     <div className="text-sm font-bold text-white">{author}</div>
